@@ -1,0 +1,16 @@
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+#treeChartDiv{
+    display:flex;
+    justify-content:space-between;
+}
+
+#tree_left{
+    padding-left:20;
+    display:flex;
+    justify-content:space-between;
+}

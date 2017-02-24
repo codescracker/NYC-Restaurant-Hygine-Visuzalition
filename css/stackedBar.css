@@ -1,0 +1,20 @@
+.bar {
+    fill: steelblue;
+}
+
+.axis path {
+    display: none;
+}
+
+.tooltip_SG {
+    position: absolute;
+    text-align: center;
+    width: 150px;
+    height: 65px;
+    padding: 2px;
+    font: 12px sans-serif;
+    background: #eee;
+    border: 0px;
+    border-radius: 8px;
+    pointer-events: none;
+}

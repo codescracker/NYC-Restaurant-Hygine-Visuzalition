@@ -1,0 +1,9 @@
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+# original data and ipython notebook files
+data/DOHMH_New_York_City_Restaurant_Inspection_Results.csv
+data/*.ipynb
+data/.ipynb_checkpoints

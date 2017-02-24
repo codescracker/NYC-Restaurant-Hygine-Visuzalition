@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>NYC Restaurant Inspection Review</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+          type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- Theme CSS -->
+    <link href="css/agency.min.css" rel="stylesheet">
+
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="scripts/d3-tips.js"></script>
+    <script src="./scripts/d3-interpolate-path.min.js"></script>
+    <script src="scripts/jquery-1.10.2.min.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <link href="css/jquery-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bar.css">
+    <link rel="stylesheet" href="css/tree.css">
+    <link rel="stylesheet" href="css/DNA.css">
+    <link rel="stylesheet" href="css/stackedBar.css">
+</head>
+
+<body id="page-top" class="index">
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">NYC RESTAURANT INSPECTION REVIEW</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#introduction">Introduction</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#overview">Overview</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#restaurant_selection">restaurants</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#team">Team</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#resource">Resources</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="intro-text">
+            
+            <div class="intro-heading">NYC Restaurants Food Safety Rate</div>
+            <a href="#introduction" class="page-scroll btn btn-xl">start exploration</a>
+        </div>
+    </div>
+</header>
+
+<!-- Introduction Section -->
+<section id="introduction">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Introduction</h2>
+                <h3 class="section-heading">Food Safety Awareness & Grading System</h3>
+                <p class="section-subheading text-justify" style="color:#808080">Department of Health and Mental Hygiene (DOHMH) has conducted official inspections towards all the restaurants in NYC for safety food concerns. According to <a href="http://www1.nyc.gov/assets/doh/downloads/pdf/rii/restaurant-grading-18-month-report.pdf">NYC Health Report</a>, in July 2010 the Health Department began requiring restaurants in all five boroughs to post letter grades summarizing their sanitary inspection scores to help achieve three goals: to inform the public about a restaurant’s inspection results in a simple, accessible way; to improve sanitary conditions and food safety practices in restaurants; and to reduce illnesses associated with dining out. 
+                    The report says New Yorkers eat at restaurants almost a billion times every year. Based on Baruch College Survey Research in 2012, 88% of New Yorkers take the grades into account when making dining decisions and 70% concern about getting sick from eating out in restaurants, delis and coffee shops. The letter grades A, B or C are used based on the score ranges below, with dual inspections to encourage restaurants to improve their food safety practices before they are graded.  <br><br>
+                <p><font color="green">A = 0 – 13 points (excellent food safety practices)</font></p>
+                <p><font color="#ffd700">B = 14 – 27 points</font></p>
+                <p><font color="red">C = 28 points or more</font></p>
+                <p><font color="blue">P = Grade pending issued on re-opening due to a closure</font></p>
+                <p><font color="purple">Z = grade pending</font></p>
+                    
+            </div>
+        </div>
+        <div class="row text-center">
+
+        </div>
+    </div>
+</section>
+
+<!-- overview Section -->
+<section id="overview" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Overview</h2>
+                <h3 class="section-heading">Restaurant Population & Grade Summary</h3>
+                <p class="section-subheading text-justify" style="color:#808080">There are 20506 restaurant across NYC. Based on the cuisine profile/description, we categorized the restaurants into 84 restaurant types. American restaurant has the highest number in all boroughs, while the restaurant type with the lowest number in each borough varies. The stacked bar chart on the first row shows the number of each restaurant types of resturants in each borough. Different colors indicate different types of resturants. If you mouse over any bar and you will see the title of the restaurant type along with the count. The chart shows that Manhattan has most of restaurant types than the other boroughs. This indicates that Manhattan is the most diverse region in NYC.
+                    On the second row, the horizontal bar chart on the left shows the percentage of accumulative grade "A" of each resturant type. Each bar corresponds to a grouped bar chart on the right, which display the distribution of different grades in each borough. If you click on a bar on the left chart, you will see the right chart change according to the bar you click. Based on the chart, Nuts/Confectionary restaurants are the best restaurant type in terms of food safety quality. This type of restaurant even does not have a "C" at all, only few "B" in Manhattan. In contrast, French restaurants have the lowest quality rate of food safety practices. <br><br></p>
+                   </p>
+            </div>
+
+            <div class="row text-center" id = "stackedBarChartDiv"></div>
+            <div class="row">
+                <div class="col-lg-6" id = "barChartDiv"></div>
+                <div class="col-lg-6" id = "groupedBarChartDiv"></div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Restaurant Selection Section -->
+<section id="restaurant_selection">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Restaurant</h2>
+                <h3 class="section-heading">Explore, Compare, and Decide!</h3>
+                <p class="section-subheading text-justify" style="color:#808080">
+Each restaurant has been inspected for more than one times to see the improvement progress. According to the following chart, many restaurants have different progress trends based on the scores they have achieved since the first inspection was conducted. This indicates a high variance in the scores trends among the restaurants since many of them have fluctuative score trends. Also, many of the restaurants have higher scores of food safety violation after the last inspections, but at the same time, there are also many restaurants having lower scores at the end. This means that the inspections have not been very effective to make all the restaurants improve their food safety practices. Therefore, it is important for the Health Department to evaluate their current inspection implementation and also to find out why many restaurants have not made better progress as many others have to promote better food safety quality.<br><br>
+If you want to see the distribution of scores and corresponding letter grades each restaurant has been given, you can pick any specific restaurant using the following filtering feature. In the restaurant list box, you will see the restaurant name(s) associated with the score trend line based on your filtering result. If you click one of the restaurant names on the list, the line chart on the right will change accordingly. The arrow within the line chart indicates the increment or decrement of the scores. The less score a restaurant gets for food safety violation, the better grade it will receive. So, if the last inspection score is lower than the first one, a green arrow will pop up, otherwise it will turn red. <font color="green">Green</font> arrow indicates a better food safety quality, while <font color="red">Red</font> arrow indicates worse quality. As you get the restaurants on the box, you can drag out any restaurants that you want to see and compare to the dragging box below the line chart. You can see all the grade history details in each grade time interval. The different color shades represent the different grades.<br><br>So, now it's time to explore, compare, and decide which better restaurants you should go and eat! <br><br> </p>
+            </div>
+        </div>
+
+        <div id="treeChartDiv">
+            <div id="tree_left" class="input-group row">
+                <div id="food_type">
+                    <p>FOOD CATEGORY</p>
+                    <select></select>
+                    <div class="ui-widget">
+                        <input class="form-control" aria-describedby="basic-addon1" placeholder="select from above or input to search"></div>
+                </div>
+                <div id="cuisine_description">
+                    <p>CUISINE DESCRIPTION</p>
+                    <select></select>
+                    <div class="ui-widget">
+                        <input class="form-control" aria-describedby="basic-addon1" placeholder="select from above or input to search"></div>
+                </div>
+                <div id="boro">
+                    <p>BOROUGH</p>
+                    <select></select>
+                    <div class="ui-widget">
+                        <input class="form-control" aria-describedby="basic-addon1" placeholder="select from above or input to search"></div>
+                </div>
+                <div id="zipcode">
+                    <p>ZIPCODE</p>
+                    <select></select>
+                    <div class="ui-widget">
+                        <input class="form-control" aria-describedby="basic-addon1" placeholder="select from above or input to search"></div>
+                </div>
+                <div id="street">
+                    <p>STREET</p>
+                    <select></select>
+                    <div class="ui-widget">
+                        <input class="form-control" aria-describedby="basic-addon1" placeholder="select from above or input to search"></div>
+                </div>
+                <div id="building">
+                    <p>BUILDING</p>
+                    <select></select>
+                    <div class="ui-widget">
+                        <input class="form-control" aria-describedby="basic-addon1" placeholder="select from above or input to search"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="DNAChartDiv">
+            <div id="DNA_left"></div>
+            <div id="tree_right">
+                <div id="linechart">
+                    <svg id="linechart_svg" width="500" height="300"></svg>
+                </div>
+                <div id="DNA_right"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Team Section -->
+<section id="team" class="bg-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">Our Amazing Team</h2>
+                <h3 class="section-subheading text-muted">This website is our final project to complete CS573 Data Visualization course
+                    in Fall 2016 at Worcester Polytechnic Institute</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img src="img/team/shile.jpg" class="img-responsive img-circle" alt="">
+                    <h4>Shile Zhao</h4>
+                    <p class="text-muted">Data Science '17 WPI</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://github.com/1nfo"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/shile-zhao-a66062a7"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img src="img/team/zhaojun.png" class="img-responsive img-circle" alt="">
+                    <h4>Zhaojun Yang</h4>
+                    <p class="text-muted">Computer Science '17 WPI</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://github.com/yzj1212"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/zhaojun-yang-7486b892"><i
+                                class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img src="img/team/shaowei.jpg" class="img-responsive img-circle" alt="">
+                    <h4>Shaowei Gong</h4>
+                    <p class="text-muted">Data Science '17 WPI</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://github.com/codescracker"><i class="fa fa-github"></i></a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/shaowei-gong-6a3603114"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="team-member">
+                    <img src="img/team/cut.JPG" class="img-responsive img-circle" alt="">
+                    <h4>Cut Famelia</h4>
+                    <p class="text-muted">Data Science '17 WPI</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="https://github.com/CutFamelia"><i class="fa fa-github"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- resource Section -->
+<section id="resource">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">resources</h2>
+                
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal_dataset" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/portfolio/dataset.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Data Source</h4>
+                    <p class="text-muted">Stanford Computational Journalism Lab</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal_theme" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/portfolio/theme.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Website Design</h4>
+                    <p class="text-muted">Bootstrap Theme</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 portfolio-item">
+                <a href="#portfolioModal_resources" class="portfolio-link" data-toggle="modal">
+                    <div class="portfolio-hover">
+                        <div class="portfolio-hover-content">
+                            <i class="fa fa-plus fa-3x"></i>
+                        </div>
+                    </div>
+                    <img src="img/portfolio/codes.jpg" class="img-responsive" alt="">
+                </a>
+                <div class="portfolio-caption">
+                    <h4>Codes Reference</h4>
+                    <p class="text-muted">D3 Gallery, Stack Overflow, several blogs, etc.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="copyright">Copyright &copy; https://1nfo.github.io/DataVisFinal/</span>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline social-buttons">
+                    <li><a href="https://github.com/1nfo/DataVisFinal"><i class="fa fa-github"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <ul class="list-inline quicklinks">
+                    <li><a href="#">Back to top</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Portfolio Modals -->
+<!-- Use the modals below to showcase details about your portfolio projects! -->
+
+<!-- Portfolio Modal Dataset -->
+<div class="portfolio-modal modal fade" id="portfolioModal_dataset" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Data Source</h2>
+                            <p class="item-intro text-muted">Stanford Computational Journalism Lab</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/dataset.jpg" alt="">
+                            <p>All of our New York city restaurant inspection data are retrieved from
+                                <a href="http://cjlab.stanford.edu/2015/09/30/lab-launch-and-data-sets/"><strong>Here</strong></a>
+                            </p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                    class="fa fa-times"></i> Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Portfolio Modal Theme -->
+<div class="portfolio-modal modal fade" id="portfolioModal_theme" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Website Design</h2>
+                            <p class="item-intro text-muted">Bootstrap Theme</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/golden-preview.png" alt="">
+                            <p>You can download the template in this portfolio sample item at <a
+                                    href="https://startbootstrap.com/">startbootstrap.com</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                    class="fa fa-times"></i> Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Portfolio Modal Resources -->
+<div class="portfolio-modal modal fade" id="portfolioModal_resources" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <!-- Project Details Go Here -->
+                            <h2>Codes Reference</h2>
+                            <p class="item-intro text-muted">D3 Gallery, Stack Overflow, several blogs, etc.</p>
+                            <img class="img-responsive img-centered" src="img/portfolio/codes.jpg" alt="">
+                            <p>D3 Gallery <a
+                                    href="https://github.com/d3/d3/wiki/Gallery">github.com/d3/d3/wiki/Gallery</a>.</p>
+                            <p>Stack Overflow <a href="http://stackoverflow.com/">http://stackoverflow.com/</a>.</p>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><i
+                                    class="fa fa-times"></i> Close Project
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery -->
+<!--<script src="vendor/jquery/jquery.min.js"></script>-->
+
+<!-- Bootstrap Core JavaScript -->
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+
+<!-- Contact Form JavaScript -->
+<script src="js/jqBootstrapValidation.js"></script>
+<script src="js/contact_me.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="js/agency.min.js"></script>
+
+<!--DNA Chart-->
+<script src="scripts/DNA.js"></script>
+
+<!-- Stacked Bar Chart-->
+<script src="scripts/stackedBar.js"></script>
+
+<!--selection groups-->
+<script src="scripts/tree.js"></script>
+
+<!--Bar Chart-->
+<script src="scripts/bar.js"></script>
+
+
+</body>
+
+</html>

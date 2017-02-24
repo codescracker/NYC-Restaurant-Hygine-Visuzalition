@@ -1,0 +1,90 @@
+#DNAChartDiv {
+    padding:5px;
+    display:flex;
+    justify-content:space-between;
+}
+
+#DNA_left {
+    padding:30px;
+    border-style: inset;
+}
+
+
+.border{
+    stroke-width:1;
+    stroke:rgb(0,0,0);
+    stroke-dasharray:8, 2;
+}
+
+#DNA_addingArea{
+    fill-opacity:0;
+    stroke:rgb(0,0,0);
+    stroke-width:.8;
+    stroke-dasharray: 3
+}
+#SVG_Frame{
+  text-align:center;
+    padding-left: 15px;
+}
+
+.DNA_bar_bg{
+    fill-opacity:.3;
+}
+
+.grade{
+    fill-opacity:.7;
+}
+
+.grade:hover{
+    fill-opacity:1;
+}
+
+.grade.A{
+    fill:rgb(120,255,100);
+}
+
+.grade.B{
+    fill:rgb(120,205,100);
+}
+
+.grade.C{
+    fill:rgb(120,155,100);
+}
+
+#DNA_button_div{
+  padding-top:20;
+  text-align:center;
+}
+
+.d3-tip {
+      line-height: 1;
+      padding: 6px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {
+      box-sizing: border-box;
+      display: inline;
+      font-size: 10px;
+      width: 100%;
+      line-height: 1;
+      color: rgba(0, 0, 0, 0.8);
+      content: "\25BC";
+      position: absolute;
+      text-align: center;
+    }
+
+    /* Style northward tooltips specifically */
+    .d3-tip.n:after {
+      margin: -2px 0 0 0;
+      top: 100%;
+      left: 0;
+    }
+
+.draggable_p:hover{
+  background-color: rgb(120,255,100);
+}
