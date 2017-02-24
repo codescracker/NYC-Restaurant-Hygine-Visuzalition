@@ -1,7 +1,7 @@
 Final Project - Interactive Data Visualization  
 ===
 
-Check it out: [https://1nfo.github.io/DataVisFinal/](https://1nfo.github.io/DataVisFinal/)
+Check it out: [https://codescracker.github.io/NYC-Restaurant-Hygine-Visuzalition/](https://codescracker.github.io/NYC-Restaurant-Hygine-Visuzalition/)
 
 [Video](https://youtu.be/wnpWz9-alac)
 
