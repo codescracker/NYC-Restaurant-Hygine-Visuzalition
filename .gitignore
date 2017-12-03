@@ -1,6 +1,7 @@
 # IntelliJ project files
 .idea
 *.iml
+.DS_Store
 out
 gen
 # original data and ipython notebook files
